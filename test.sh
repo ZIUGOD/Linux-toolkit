@@ -20,7 +20,7 @@ python3 --version
 
 echo "=== [3] Creating virtual environment ==="
 python3 -m venv venv
-source venv/bin/activate
+. venv/bin/activate
 
 echo "=== [4] Installing Python packages ==="
 pip install --upgrade pip
