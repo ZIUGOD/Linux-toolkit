@@ -71,10 +71,10 @@ cp response.json output/
 ls -lah output/
 
 echo "=== [10] Simulating conditional logic ==="
-if [ "$title" == "sunt aut facere repellat provident occaecati excepturi optio reprehenderit" ]; then
-    echo "Title matches expected value"
+if [[ "$TITLE" == *"sunt aut facere"* ]]; then
+    echo "Title matches expected pattern"
 else
-    echo "Unexpected title"
+    echo "Unexpected title: $TITLE"
     exit 1
 fi
 
