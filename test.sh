@@ -6,10 +6,10 @@ set -o pipefail
 echo "=== [1] Updating system and installing dependencies ==="
 
 if command -v apt-get >/dev/null 2>&1; then
-    sudo apt-get update -y
-    sudo apt-get install -y python3 python3-pip curl jq
+    apt-get update -y
+    apt-get install -y python3 python3-pip curl jq
 elif command -v apk >/dev/null 2>&1; then
-    sudo apk add --no-cache python3 py3-pip curl jq
+    apk add --no-cache python3 py3-pip curl jq
 else
     echo "Unsupported package manager"
     exit 1
