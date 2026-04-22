@@ -57,10 +57,10 @@ if [ "$HTTP_RESPONSE" -ne 200 ]; then
 fi
 
 echo "=== [8] Parsing JSON ==="
-TITLE=$(jq -r '.title' response.json)
-echo "Post title: $TITLE"
+title=$(jq -r '.title' response.json)
+echo "Post title: $title"
 
-if [ -z "$TITLE" ] || [ "$TITLE" == "null" ]; then
+if [ -z "$title" ] || [ "$title" == "null" ]; then
     echo "Invalid JSON parsing"
     exit 1
 fi
@@ -71,7 +71,7 @@ cp response.json output/
 ls -lah output/
 
 echo "=== [10] Simulating conditional logic ==="
-if [ "$TITLE" == "sunt aut facere repellat provident occaecati excepturi optio reprehenderit" ]; then
+if [ "$title" == "sunt aut facere repellat provident occaecati excepturi optio reprehenderit" ]; then
     echo "Title matches expected value"
 else
     echo "Unexpected title"
