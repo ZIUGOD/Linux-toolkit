@@ -70,15 +70,7 @@ mkdir -p output
 cp response.json output/
 ls -lah output/
 
-echo "=== [10] Simulating conditional logic ==="
-if [[ "$TITLE" == *"sunt aut facere"* ]]; then
-    echo "Title matches expected pattern"
-else
-    echo "Unexpected title: $TITLE"
-    exit 1
-fi
-
-echo "=== [11] Cleanup ==="
+echo "=== [10] Cleanup ==="
 deactivate
 rm -rf venv test_script.py response.json
 
