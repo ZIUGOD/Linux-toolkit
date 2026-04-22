@@ -3,6 +3,8 @@
 set -e  # Exit on error
 set -o pipefail
 
+TITLE=$(jq -r '.title' response.json)
+
 echo "=== [1] Updating system and installing dependencies ==="
 
 if command -v apt-get >/dev/null 2>&1; then
@@ -57,7 +59,6 @@ if [ "$HTTP_RESPONSE" -ne 200 ]; then
 fi
 
 echo "=== [8] Parsing JSON ==="
-TITLE=$(jq -r '.title' response.json)
 echo "Post title: $TITLE"
 
 if [ -z "$TITLE" ] || [ "$TITLE" == "null" ]; then
