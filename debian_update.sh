@@ -6,11 +6,11 @@ echo ">> Starting system maintenance..."
 
 sudo apt update && sudo apt full-upgrade -y
 
-sudo apt autoremove --purge -y && sudo apt autoclean
+sudo apt autoremove --purge && sudo apt autoclean
 
 if ! command -v fastfetch &>/dev/null; then
     echo ">> Installing fastfetch via APT..."
-    sudo apt install -y fastfetch || echo ">> Fastfetch not found in current repos."
+    sudo apt install fastfetch || echo ">> Fastfetch not found in current repos."
 fi
 
 fastfetch
